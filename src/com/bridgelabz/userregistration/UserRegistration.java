@@ -25,6 +25,15 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(lastName);
 		return  matcher.matches();
 	}
+	
+	public boolean validEmail() {
+		System.out.println("Enter email : ");
+		String userEmail = scan.next();
+		String emailPattern = "^[A-Za-z0-9._+%-]+@[A-Za-z0-9.-]+.[A-Za-z]{2,4}$";
+		Pattern pattern = Pattern.compile(emailPattern);
+		Matcher matcher = pattern.matcher(userEmail);
+		return matcher.matches();
+	}
 
 	public static void main(String[] args) {
 
@@ -34,7 +43,8 @@ public class UserRegistration {
 		System.out.println("first name" +result1);
 		boolean result2 = user.lastName();
 		System.out.println("last name " +result2);
-
+		boolean result3 = user.validEmail();
+		System.out.println("last name " +result3);
 	}
 
 }
